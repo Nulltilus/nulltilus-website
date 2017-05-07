@@ -1,0 +1,12 @@
+/* TEAM */
+	Web designer: Cristian Molina
+	Twitter: @legomolina
+	From:Valencia, Valencia, Spain
+
+/* THANKS */
+
+/* SITE */
+	Last update:2016/11/7
+	Language: Castellano
+	Doctype:HTML5
+	IDE: Sublime Text, PHPStorm

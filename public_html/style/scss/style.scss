@@ -1,0 +1,25 @@
+//Config
+@import "config/variables";
+@import "config/mixins";
+@import "config/fonts";
+
+//General
+@import "general";
+@import "common_classes";
+
+//Pages
+@import "pages/home";
+@import "pages/menu";
+@import "pages/content";
+@import "pages/about";
+@import "pages/projects";
+@import "pages/blog";
+@import "pages/contact";
+@import "pages/footer";
+
+//Blog
+@import "blog/post";
+@import "blog/blog";
+
+//Error
+@import "pages/404";

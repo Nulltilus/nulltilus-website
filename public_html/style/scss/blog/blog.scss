@@ -1,0 +1,40 @@
+$headerHeight: 30vh;
+
+body.blog {
+  & > .blog-content {
+    margin-top: $headerHeight;
+    padding-top: 30px;
+
+    & .blog-post {
+      border-bottom: 1px solid color(nulltilus);
+      padding: 1.2em;
+
+      & a {
+        @include linkCoolUnderline(color(black), color(black));
+        text-decoration: none;
+      }
+
+      & .post-title {
+        font-size: 1.7em;
+        margin: 20px 0 5px;
+        text-align: left;
+        display: block;
+      }
+
+      & .post-date, & .post-author {
+        font-size: 0.7em;
+        display: inline-block;
+
+        &.post-author:before {
+          content: '| ';
+        }
+      }
+
+      & .post-excerpt, & .post-read-more {
+        @media only screen and (max-width: 480px) {
+          font-size: 0.8em;
+        }
+      }
+    }
+  }
+}

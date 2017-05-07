@@ -1,0 +1,39 @@
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+html, body {
+  font-family: $primaryFontFamily, sans-serif;
+  text-align: left;
+  margin: 0;
+  padding: 0;
+  background-color: $bodyBackgroundColor;
+  color: color(black);
+  overflow-x: hidden;
+  width: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $secondaryFontFamily, $primaryFontFamily, sans-serif;
+  text-align: center;
+  font-weight: 100;
+  font-size: 3em;
+
+  & > span {
+    color: color(nulltilus);
+  }
+}
+
+a, a:link, a:visited {
+  text-decoration: none;
+  color: color(black);
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+p {
+  margin: 0;
+  padding: 1em 0;
+}

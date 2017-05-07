@@ -1,0 +1,34 @@
+/* Add animated underline */
+
+@mixin linkCoolUnderline ($color: #FFFFFF, $hoverColor: #FFFFFF, $beforeHeight: 1px, $transitionDelay: .3s, $expandedScale: 1.1) {
+  @content;
+  position: relative;
+
+  &:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: $beforeHeight;
+    bottom: 0;
+    left: 0;
+    background-color: $hoverColor;
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: all $transitionDelay ease;
+  }
+
+  &:hover {
+    color: $hoverColor;
+
+    &:before {
+      visibility: visible;
+      transform: scaleX($expandedScale);
+    }
+  }
+}
+
+/* Return color from color map in variables.scss file */
+
+@function color($color) {
+  @return map_get($fontColors, $color);
+}

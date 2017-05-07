@@ -1,0 +1,33 @@
+#content {
+  background-color: color(black);
+  color: color(black);
+
+  position: relative;
+  margin-top: 100vh;
+  z-index: 10;
+
+  & > section {
+    min-height: 100vh;
+    padding: 50px 0 50px;
+
+    overflow-y: hidden;
+
+    & > h1 {
+      font-size: 5em;
+      font-weight: 100;
+      color: color(white);
+
+      border-bottom: 1px solid color(white);
+
+      width: 400px;
+      margin-left: auto;
+      margin-right: auto;
+
+      @media only screen and (max-width: 768px) {
+        margin-top: 0.1em;
+        font-size: 3.5em;
+        width: 300px;
+      }
+    }
+  }
+}

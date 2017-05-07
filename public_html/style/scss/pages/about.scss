@@ -1,0 +1,114 @@
+section.section-about {
+  background-color: color(nulltilus);
+  color: color(white);
+
+  & .employees-container {
+    padding: 30px 0;
+  }
+
+  & .employee {
+    display: flex;
+    align-items: center;
+
+    @media only screen and (min-width: 481px) {
+      &:nth-child(even) {
+        text-align: right;
+        flex-direction: row-reverse;
+
+        & .employee-links {
+          right: 0;
+        }
+
+        & .employee-image > img {
+          box-shadow: -5px 5px 10px rgba(0, 0, 0, 0.3);
+        }
+      }
+    }
+
+    @media only screen and (max-width: 480px) {
+      width: 100%;
+      display: block;
+    }
+
+    & > .employee-image {
+      width: 200px;
+      height: 200px;
+
+      display: flex;
+      align-items: center;
+
+      @media only screen and (max-width: 480px) {
+        display: block;
+        margin: 20px auto;
+      }
+
+      & > img {
+        max-width: 100%;
+        max-height: 100%;
+
+        border-radius: 50%;
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+      }
+    }
+
+    & > .employee-description {
+      display: inline-block;
+      position: relative;
+
+      margin-left: 50px;
+      margin-right: 50px;
+      padding-bottom: 30px;
+
+      & > .employee-name {
+        display: block;
+        font-weight: bold;
+      }
+
+      & > .employee-links {
+        display: block;
+
+        position: absolute;
+        bottom: 0;
+
+        & > a {
+          margin-right: 20px;
+
+          & > i {
+            color: color(white);
+
+            &::before {
+              text-shadow: none;
+              transition: 0.2s all;
+            }
+          }
+
+          &:hover {
+            &.twitter {
+              & > i {
+                color: #00aced;
+              }
+            }
+
+            &.github {
+              & > i {
+                color: #171717;
+              }
+            }
+
+            &.website {
+              & > i {
+                color: color(light_grey);
+              }
+            }
+
+            & > i {
+              &::before {
+                text-shadow: 0 0 4px rgba(0, 0, 0, 1);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

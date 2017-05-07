@@ -1,0 +1,85 @@
+$headerHeight: 30vh;
+$headerHeightSmall: 72px;
+
+body.post, body.blog {
+
+  &body.post .wrapper {
+    width: 970px;
+    margin: 0 auto;
+
+    @media only screen and (max-width: 1200px) {
+      width: 750px;
+    }
+  }
+
+  & > header.header {
+    height: $headerHeight;
+    width: 100%;
+
+    background-color: color(nulltilus);
+
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    z-index: 1000;
+
+    transition: all .2s ease;
+
+    &.small {
+      height: $headerHeightSmall;
+
+      @media only screen and (max-width: 768px) {
+        height: 61px;
+
+        & > .post-title {
+          opacity: 0;
+        }
+      }
+    }
+
+    & > .post-title {
+      position: absolute;
+      bottom: 0;
+      left: 70px;
+      opacity: 1;
+
+      transition: opacity .2s ease;
+
+      @media only screen and (max-width: 768px) {
+        bottom: 2em;
+      }
+
+      & > h1 {
+        margin: 0;
+        padding: 0;
+
+        font-size: 3.5em;
+        color: color(white);
+      }
+    }
+
+    & > .post-info {
+      position: absolute;
+      bottom: 10px;
+      right: 0;
+
+      font-size: 0.9em;
+      color: color(white);
+
+      & > .post-author, .post-date {
+        display: inline-block;
+        padding: 0 20px;
+
+        &.post-author {
+          border-right: 1px solid color(white);
+        }
+      }
+    }
+  }
+
+  & > .post-content {
+    margin-top: $headerHeight;
+    padding-top: 30px;
+  }
+}

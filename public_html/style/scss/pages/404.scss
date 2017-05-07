@@ -1,0 +1,254 @@
+$waterColor: #8BB7F0;
+
+body.error {
+  width: 100vw;
+  height: 100vh;
+
+  overflow: hidden;
+
+  background-color: #cafff8;
+
+  .bubble-error {
+    position: absolute;
+    bottom: calc(40vh + 155px);
+    left: 20vw;
+
+    width: 300px;
+    height: 100px;
+
+    opacity: 0;
+
+    padding: 15px;
+
+    background-color: #FFFFFF;
+
+    border-radius: 10px;
+    border: #00ABBF solid 6px;
+
+    animation: animation-bubble .5s ease-in-out 6s forwards;
+
+    &:after {
+      content: '';
+      position: absolute;
+      border-style: solid;
+      border-width: 15px 15px 0;
+      border-color: #FFFFFF transparent;
+      display: block;
+      width: 0;
+      z-index: 1;
+      bottom: -15px;
+      left: 37px;
+    }
+
+    &:before {
+      content: '';
+      position: absolute;
+      border-style: solid;
+      border-width: 20px 20px 0;
+      border-color: #00ABBF transparent;
+      display: block;
+      width: 0;
+      z-index: 0;
+      bottom: -26px;
+      left: 32px;
+    }
+
+    & > span {
+      display: block;
+      padding: 0 0 10px;
+
+      width: 0;
+
+      overflow: hidden;
+      white-space: nowrap;
+
+      animation: animation-bubble-text 2s steps(30, end) 6.2s forwards;
+
+      &.back-link {
+        animation: animation-bubble-text-link 1.2s steps(16, end) 8.2s forwards;
+      }
+    }
+  }
+
+  & .sun {
+    background-color: #ffdb67;
+
+    width: 500px;
+    height: 500px;
+
+    border-radius: 50%;
+
+    position: absolute;
+    top: -250px;
+    left: -250px;
+  }
+
+  & .water {
+    width: 100vw;
+    height: 40vh;
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    background-color: $waterColor;
+
+    & > .border {
+      width: 100%;
+      height: 20px;
+      background: transparent url(../../images/backgrounds/404/water.png) repeat-x;
+      background-size: 350px;
+
+      position: absolute;
+      top: -9px;
+      z-index: 100;
+    }
+
+    & > .border-1 {
+      left: -100%;
+      animation: animation-border-1 40s linear infinite alternate;
+    }
+
+    & > .border-2 {
+      left: 0;
+      animation: animation-border-2 40s linear infinite alternate;
+    }
+  }
+
+  & .buoy {
+    background: transparent url(../../images/backgrounds/404/buoy.png) no-repeat center;
+    background-size: contain;
+
+    height: 300px;
+    width: 178px;
+
+    position: absolute;
+    bottom: calc(40vh - 35px);
+    left: 5vw;
+
+    transform-origin: bottom;
+
+    animation: animation-buoy ease-in-out 5s infinite;
+  }
+
+  & .submarine {
+    background: transparent url(../../images/backgrounds/404/nulltilus_submarine.png) no-repeat center;
+    background-size: contain;
+
+    height: 200px;
+    width: 317px;
+
+    position: absolute;
+    z-index: 20;
+
+    animation: animation-submarine-movement ease-in-out 6s forwards, animation-submarine-idle 8s ease-in-out 6s infinite;
+  }
+
+  & .underwater {
+    background-color: transparentize($waterColor, 0.4);
+
+    width: 100%;
+    height: 100%;
+
+    position: relative;
+    z-index: 50;
+  }
+}
+
+@keyframes animation-bubble-text {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 15em;
+  }
+}
+
+@keyframes animation-bubble-text-link {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 8em;
+  }
+}
+
+@keyframes animation-bubble {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes animation-submarine-movement {
+  0% {
+    bottom: 0;
+    left: calc(100vw - 317px);
+  }
+
+  100% {
+    bottom: calc(40vh - 70px);
+    left: 20vw;
+  }
+}
+
+@keyframes animation-submarine-idle {
+  0% {
+    transform: translateY(0);
+  }
+
+  25% {
+    transform: translateY(5px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+
+  75% {
+    transform: translateY(5px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes animation-buoy {
+  0% {
+    transform: rotateZ(-6deg);
+  }
+
+  50% {
+    transform: rotateZ(6deg);
+  }
+
+  100% {
+    transform: rotateZ(-6deg);
+  }
+}
+
+@keyframes animation-border-1 {
+  0% {
+    left: -100%;
+  }
+
+  100% {
+    left: -50%;
+  }
+}
+
+@keyframes animation-border-2 {
+  0% {
+    left: 0;
+  }
+
+  100% {
+    left: 50%;
+  }
+}
